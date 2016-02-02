@@ -3,7 +3,6 @@ package ru.edu.pgtk;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -26,9 +25,6 @@ public class StringParserTest {
     @Test
     public void testSplitOnlyWords() {
         List<String> result = StringParser.splitIntoWords("Want to be the best - get working!", true);
-//        for (String word: result) {
-//            System.out.println(word);
-//        }
         assertNotNull(result);
         assertTrue(result.size() == 7); // БЕЗ тире!
     }
@@ -36,22 +32,16 @@ public class StringParserTest {
     @Test
     public void testSplitOnlyWordsAndNotOnlyWords() {
         List<String> result = StringParser.splitIntoWords("Want to be the best - get working!", true);
-//        for (String word: result) {
-//            System.out.println(word);
-//        }
         assertNotNull(result);
         assertTrue(result.size() == 7); // БЕЗ знаков препинания!
         result = StringParser.splitIntoWords("Want to be the best - get working!", false);
-//        for (String word: result) {
-//            System.out.println(word);
-//        }
         assertNotNull(result);
         assertTrue(result.size() == 8); // СО знаками препинания!
     }
 
     @Test
     public void testJoinWords() {
-        List<String> words = new ArrayList<String>();
+        List<String> words = new ArrayList<>();
         words.add("This");
         words.add("is");
         words.add("a");
